@@ -1,0 +1,351 @@
+.geo
+    display: flex
+    cursor: pointer
+    &__icon
+        margin-top: auto
+        margin-bottom: auto
+        display: flex
+        svg
+            margin-top: auto
+            margin-bottom: auto
+    &__heading
+        margin-top: auto
+        margin-bottom: auto
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 160%
+        color: #191919
+        margin-left: 20px
+        padding-right: 34px
+        position: relative
+        &:after
+            position: absolute
+            right: 0
+            top: 50%
+            margin-top: -12px
+            content: ''
+            display: block
+            width: 24px
+            height: 24px
+            background-repeat: no-repeat
+            background-position: center
+            background-image: url(../images/dist/select.svg)
+
+
+.fav
+    display: flex
+    text-decoration: none !important
+    &__icon
+        margin-top: auto
+        margin-bottom: auto
+        display: flex
+        svg
+            margin-top: auto
+            margin-bottom: auto
+    &__num
+        margin-top: auto
+        margin-bottom: auto
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 160%
+        color: #191919
+        margin-left: 5px
+    &:hover
+        .fav
+            &__icon
+                svg
+                    path
+                        stroke: $accent
+
+
+.fav-link
+    cursor: pointer
+    text-decoration: none
+    display: flex
+    &__icon
+        margin-top: auto
+        margin-bottom: auto
+        margin-right: 10px
+        display: flex
+        svg
+            margin-top: auto
+            margin-bottom: auto
+    &__title
+        margin-top: auto
+        margin-bottom: auto
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 160%
+        color: #191919
+        transition: .3s ease
+    &:hover
+        .fav-link
+            &__title
+                color: $accent
+
+
+.enter-link
+    cursor: pointer
+    text-decoration: none
+    display: flex
+    &__icon
+        margin-top: auto
+        margin-bottom: auto
+        margin-right: 10px
+        display: flex
+        svg
+            margin-top: auto
+            margin-bottom: auto
+    &__title
+        margin-top: auto
+        margin-bottom: auto
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 160%
+        color: #191919
+        transition: .3s ease
+    &:hover
+        .fav-link
+            &__title
+                color: $accent
+
+
+.phone-link
+    font-style: normal
+    font-weight: 700
+    font-size: 30px
+    line-height: 160%
+    color: #191919
+    text-decoration: none
+    transition: .3s ease
+    display: inline-block
+    &:hover
+        color: $accent
+
+
+.menu
+    display: flex
+    ul
+        display: flex
+        margin-top: auto
+        margin-bottom: auto
+        li
+            margin-left: 16px
+            margin-right: 16px
+            a
+                text-decoration: none
+                font-style: normal
+                font-weight: 400
+                font-size: 16px
+                line-height: 160%
+                color: #191919
+                transition: .3s ease
+                &:hover
+                    color: $accent
+
+    
+.header
+    background-color: #fff
+    .logo
+        width: 180px
+        height: 42px
+        display: block
+    .geo_mob
+        display: none
+    &-top
+        height: 50px
+        border-bottom: 1px solid rgba(25,25,25,.3)
+        display: flex
+        .container
+            margin-top: auto
+            margin-bottom: auto
+        &-inner
+            display: flex
+            justify-content: space-between
+    
+    &-bottom
+        height: 100px
+        display: flex
+        .container
+            margin-top: auto
+            margin-bottom: auto
+        &-inner
+            display: flex
+            justify-content: space-between
+
+
+.menu-toggler
+    display: none
+    cursor: pointer
+    position: absolute
+    right: 10px
+    width: 24px
+    height: 24px
+    top: 1px
+    background-repeat: no-repeat
+    background-position: center
+    background-image: url(../images/dist/menu.svg)
+
+.menu-wrapper
+    display: none
+    position: fixed
+    top: 66px
+    width: 100%
+    left: 0
+    z-index: 100
+    height: calc(100% - 66px)
+    background-color: #fff
+    user-select: none
+    border-top: 1px solid rgba(25,25,25,0.3)
+    overflow-y: auto
+    nav
+        margin-top: 40px
+        ul
+            li
+                margin-bottom: 30px
+                &:last-child
+                    margin-bottom: 0
+                a
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 16px
+                    line-height: 160%
+                    color: #191919
+                    text-decoration: none
+
+    .menu-links
+        margin-top: 30px
+        padding-top: 30px
+        border-top: 1px solid rgba(25,25,25,0.1)
+        .fav-link
+            margin-bottom: 30px
+            
+    .soc
+        margin-top: 116px
+    .phone-link
+        margin-top: 30px
+        margin-bottom: 40px
+
+
+
+.menu-openned 
+    overflow: hidden
+    .menu-wrapper
+        display: block
+    .menu-toggler
+        background-image: url(../images/dist/menu-close.svg)
+
+    
+.menu-tags
+    display: block
+    padding: 20px
+    padding-left: 0
+    padding-right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    display: flex
+    padding-bottom: 0
+    border-top-left-radius: 5px
+    border-top-right-radius: 5px
+    transform: translateY(100%)
+    translate: .3s ease
+    overflow: hidden
+    position: fixed
+    background-color: #fff
+    z-index: 100
+    &__close
+        cursor: pointer
+        width: 24px
+        height: 24px
+        display: block
+        position: absolute
+        top: 0px
+        right: 0px
+        background-repeat: no-repeat
+        background-image: url(../images/dist/menu-close.svg)
+    .tag
+        padding: 6px 10px
+        background-color: #fff
+        border: 1px solid rgba(25,25,25,.3)
+    .tags-list
+        display: block
+        &__title
+            color: #191919
+            margin-bottom: 20px
+    .tags-list-wrapper
+        position: relative
+        
+
+.menu-tags-openned 
+    .menu-tags
+        transform: translateY(0)
+
++media-breakpoint-down(xl)
+    .menu ul li
+        margin-left: 10px
+        margin-right: 10px
+        a
+            font-size: 14px
+
++media-breakpoint-down(lg)
+    body
+        padding-top: 66px
+
+    .geo
+        &__icon
+            display: none
+        &__heading
+            font-size: 16px
+            margin-left: 0
+        
+    .header
+        z-index: 99
+        position: fixed
+        height: 66px
+        top: 0
+        left: 0
+        width: 100%
+        padding-top: 20px
+        padding-bottom: 20px
+        .geo_mob
+            display: flex
+            position: absolute
+            left: 129px
+            top: 2px
+        &-top
+            display: none
+        &-bottom
+            height: auto
+            &-inner
+                position: relative
+                &:after
+                    right: 44px
+                    top: 0
+                    content: ''
+                    display: block
+                    width: 1px
+                    position: absolute
+                    height: 26px
+                    background-color: rgba(25,25,25,.1)
+        .menu
+            display: none
+        .phone
+            display: none
+        .logo
+            width: 80px
+            height: 19px
+            margin-top: 4px
+            position: relative
+            img
+                position: absolute
+                top: 0
+                left: 0
+    .menu-toggler
+        display: block
+
+        

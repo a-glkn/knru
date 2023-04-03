@@ -1,0 +1,64 @@
+select
+    display: none
+
+.nice-select
+    width: 100%
+    padding-right: 54px
+    height: 56px
+    padding-left: 20px  
+    display: flex
+    border-radius: 5px
+    border: 1px solid rgba(25,25,25,.3)
+    transition: .3s ease
+    &:after
+        transform: none
+        border: 0
+        width: 24px
+        height: 24px
+        background-repeat: no-repeat
+        background-image: url(../images/dist/select.svg)
+        margin-top: -12px !important
+        right: 20px
+        top: 50% !important
+        transform-origin: unset
+    
+    .current
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 160%
+        color: #191919
+        margin: auto 0
+
+    &:hover
+        border-color: $accent
+        &:after
+            background-image: url(../images/dist/select-active.svg)
+
+    &.open
+        border-color: $accent
+        &:after
+            transform: rotate(180deg)
+            background-image: url(../images/dist/select-active.svg)
+
+
+        
+.nice-select-dropdown
+    width: 100%
+    border-radius: 5px
+    background-color: #fff
+    .list
+        margin: 7.5px 0
+        li
+            padding: 7.5px 20px
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 160%
+            background: none !important
+            &:hover
+                color: $accent
+
+            &.selected
+                font-weight: normal
+                color: $accent

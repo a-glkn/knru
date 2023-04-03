@@ -1,0 +1,152 @@
+<form class="form filter">
+
+    <div class="filter__top">
+
+        <div class="filter-radio">
+            <input class="styled-radio" type="radio" id="radio-rent" name="radio-group" checked>
+            <label for="radio-rent">Аренда</label>
+        </div>
+
+        <div class="filter-radio">
+            <input class="styled-radio" type="radio" id="radio-sell" name="radio-group">
+            <label for="radio-sell">Продажа</label>
+        </div>
+        
+    </div>
+
+    <div class="filter__main">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <select class="select" data-placeholder="Сортировка">
+                    <option value="1">По цене</option>
+                    <option value="2">По цене за м2</option>
+                    <option value="3">По площади</option>
+                    <option value="4">По удаленности от метро</option>
+                    <option value="5">По дате обновления</option>
+                </select>
+            </div>
+
+            <div class="col-lg-3">
+                <select class="select" data-placeholder="Тип помещения">
+                    <option value="1">Тип 1</option>
+                    <option value="2">Тип 2</option>
+                    <option value="3">Тип 3</option>
+                    <option value="4">Тип 4</option>
+                </select>
+            </div>
+
+            <div class="col-lg-3">
+                <select class="select" data-placeholder="Район">
+                    <option value="1">Район 1</option>
+                    <option value="2">Район 2</option>
+                    <option value="3">Район 3</option>
+                    <option value="4">Район 4</option>
+                    <option value="5">Район 5</option>
+                    <option value="6">Район 6</option>
+                    <option value="7">Район 7</option>
+                    <option value="8">Район 8</option>
+                    <option value="9">Район 9</option>
+                    <option value="10">Район 10</option>
+                    <option value="11">Район 11</option>
+                    <option value="12">Район 12</option>
+                </select>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="hidden-mob">
+                    <input type="text" class="form__input " placeholder="Адрес">
+                </div>
+
+                <div class="icon more_icon">
+                    <div class="icon__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20V6.172C19.9999 6.70239 19.7891 7.21101 19.414 7.586L15 12V19L9 21V12.5L4.52 7.572C4.18545 7.20393 4.00005 6.7244 4 6.227V4Z" stroke="#3579C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="icon__title">Ещё фильтры</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hidden-mob">
+                    <div class="form-group">
+                        <input type="text" class="form__input" placeholder="От, м2">
+                        <input type="text" class="form__input" placeholder="До, м2">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-lg-6">
+                <div class="hidden-mob">
+                    <div class="form-group form-group_with-select">
+                        <input type="text" class="form__input" placeholder="От, м2">
+                        <input type="text" class="form__input" placeholder="До, м2">
+                        <select class="select" data-placeholder="">
+                            <option selected value="1">В месяц</option>
+                            <option value="2">В год</option>
+                        </select>
+                    </div>
+
+                    <div class="icon hide_icon">
+                        <div class="icon__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20V6.172C19.9999 6.70239 19.7891 7.21101 19.414 7.586L15 12V19L9 21V12.5L4.52 7.572C4.18545 7.20393 4.00005 6.7244 4 6.227V4Z" stroke="#3579C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="icon__title">Скрыть</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-bot">
+            <div class="col-lg-6 order-lg-2">
+                <div class="row">
+                    <div class="col-lg-7 order-lg-2">
+                        <button class="btn btn_w-100p btn_primary">Показать 1 456 предложений</button>
+                    </div>
+
+                    <div class="col-lg-5 order-lg-1">
+                        <button class="btn btn_w-100p btn_map">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.5 11.1216C9.5 11.9172 9.81607 12.6803 10.3787 13.2429C10.9413 13.8055 11.7044 14.1216 12.5 14.1216C13.2956 14.1216 14.0587 13.8055 14.6213 13.2429C15.1839 12.6803 15.5 11.9172 15.5 11.1216C15.5 10.3259 15.1839 9.56287 14.6213 9.00026C14.0587 8.43765 13.2956 8.12158 12.5 8.12158C11.7044 8.12158 10.9413 8.43765 10.3787 9.00026C9.81607 9.56287 9.5 10.3259 9.5 11.1216Z" stroke="#191919" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.157 16.7788L13.914 21.0218C13.539 21.3964 13.0306 21.6069 12.5005 21.6069C11.9704 21.6069 11.462 21.3964 11.087 21.0218L6.843 16.7788C5.72422 15.6599 4.96234 14.2345 4.65369 12.6826C4.34504 11.1308 4.50349 9.52229 5.10901 8.06051C5.71452 6.59872 6.7399 5.34932 8.05548 4.47028C9.37107 3.59125 10.9178 3.12207 12.5 3.12207C14.0822 3.12207 15.6289 3.59125 16.9445 4.47028C18.2601 5.34932 19.2855 6.59872 19.891 8.06051C20.4965 9.52229 20.655 11.1308 20.3463 12.6826C20.0377 14.2345 19.2758 15.6599 18.157 16.7788Z" stroke="#191919" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>На карт</span>
+                        </button>
+                    </div>
+    
+                    
+                </div>
+            </div>
+
+            <div class="col-lg-6 order-lg-1 my-auto">
+                <div class="icon icon_metro">
+
+                    <div class="icon__icon">
+                        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.0972 16.1673L15.9427 2.90098L15.7667 2.90086L12.0344 10.2169L8.16769 2.83838L2.87333 16.1673H1.50513V17.2384H9.00051V16.1673H7.51333L9.00051 12.002L12.0344 17.2384L14.9492 12.002L16.4364 16.1673H14.9492V17.2384H22.3851V16.1673H21.0972Z" fill="#3579C1"/>
+                        </svg>    
+                    </div>
+
+                    <div class="icon__title">
+                        Метро
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+
+
+
+
+</form>
+

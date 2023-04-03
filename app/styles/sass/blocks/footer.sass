@@ -1,0 +1,83 @@
+.footer
+    background-color: #191919
+    padding-top: 80px
+    padding-bottom: 80px
+
+    .foot-menu
+        margin-right: 40px
+        &:last-child
+            margin-right: 0
+        li
+            margin-bottom: 30px
+            a
+                font-style: normal
+                font-weight: 400
+                font-size: 16px
+                line-height: 160%
+                color: #FFFFFF
+                text-decoration: none
+                transition: .3s ease
+                &:hover
+                    color: $accent
+
+
+    .logo
+        width: 237px
+
+    &-inner
+        display: flex
+        justify-content: space-between
+
+    .right
+        width: 309px
+        .btn
+            margin-bottom: 30px
+        .soc
+            margin-bottom: 30px
+
+        .addr
+            margin-bottom: 30px
+    .menus
+        display: flex
+
+    .phone
+        &__number
+            color: #fff
+
++media-breakpoint-down(xl)
+    .footer
+        padding-top: 60px
+        padding-bottom: 60px
+        .foot-menu 
+            li 
+                a
+                    font-size: 14px
+
+        .right
+            width: 289px
+
+        .logo
+            width: 217px
+
+
++media-breakpoint-down(lg)
+    .footer
+        .logo
+            margin-left: auto
+            margin-right: auto
+            margin-bottom: 30px
+        .menus
+            display: block
+        &-inner
+            display: block
+
+        .foot-menu
+            text-align: center
+            margin-right: 0
+            ul
+                li
+                    margin-bottom: 15px
+        .right
+            margin-top: 30px
+            margin-left: auto
+            margin-right: auto

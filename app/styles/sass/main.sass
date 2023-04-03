@@ -1,0 +1,227 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import config
+@import 'blocks/**/*'
+
+
+.section-intro
+    height: 800px
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
+    background-size: cover
+    padding-top: 80px
+
+    &:before
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background-color: #191919
+        opacity: .4
+        position: absolute
+    .container
+        position: relative
+        z-index: 1
+    .heading_lg
+        margin-bottom: 10px
+
+    .filter
+        margin-top: 60px
+
+    .tags-list
+        margin-top: 30px
+        .tag_more
+            display: none
+
+.section-cats
+    padding-top: 80px
+    padding-bottom: 80px
+
+.section-offers
+    padding-top: 80px
+    padding-bottom: 80px  
+    .heading-main
+        margin-bottom: 10px
+
+    .row-slider
+        margin-top: 50px
+
+.section-quiz
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
+    background-size: cover
+    background-image: url(../images/dist/bg-quiz.jpg)
+    padding-top: 80px
+    padding-bottom: 80px
+    .block
+        margin-left: auto
+        
+        .heading-main
+            margin-bottom: 10px
+
+        .heading_sm
+            margin-top: 50px
+        .btn
+            margin-top: 30px
+
+
+.section-hot-offers
+    padding-top: 80px
+    padding-bottom: 80px
+    .heading
+        margin-bottom: 50px
+
+    .tabs-headers
+        margin-bottom: 50px
+
+    .row-more
+        margin-top: 30px
+
+.section-features
+    padding-top: 80px
+    padding-bottom: 80px
+    .heading
+        margin-bottom: 10px
+    .feature-list
+        margin-top: 40px
+
+.section-about
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
+    background-size: cover
+    background-image: url(../images/dist/bg-about.jpg)
+    padding-top: 80px
+    padding-bottom: 80px
+    .block
+        .heading
+            margin-bottom: 20px
+        .btn
+            margin-top: 50px
+        
+.section-experts
+    padding-top: 80px
+    padding-bottom: 80px
+    .heading
+        margin-bottom: 50px
+
+    .expert-slider
+        margin-bottom: 50px
+
+
+.section-office
+    padding-top: 80px
+    padding-bottom: 80px
+    img
+        margin-top: 20px
+        border-radius: 5px
+    .heading_sm
+        margin-bottom: 10px
+
+    .contact-info
+        margin-top: 150px
+    .addr
+        margin-bottom: 30px
+        &__title
+            color: $textcolor
+
+    .phone
+        margin-bottom: 30px
+
+    .soc
+        margin-top: 30px
+
+.section-feedback
+    padding-top: 80px
+    padding-bottom: 80px
+
+    .heading
+        margin-bottom: 50px
+
+.section-journal
+    padding-top: 80px
+    padding-bottom: 80px
+    .heading
+        margin-bottom: 50px
+
+    .btn
+        margin-top: 50px
+
+.section-contact-us
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
+    background-size: cover
+    background-image: url(../images/dist/bg-offer.jpg)
+    padding-top: 80px
+    padding-bottom: 80px
+    .form
+        margin-top: 30px
+    .heading
+        margin-bottom: 20px
+
+
+
+.section-partners
+    padding-top: 80px
+    padding-bottom: 80px
+    .heading
+        margin-bottom: 45px    
+
++media-breakpoint-down(xl)
+    .section-office 
+        .contact-info
+            margin-top: 120px
+
+    .section-cats, .section-offers, .section-quiz, .section-hot-offers, .section-features, .section-about, .section-experts, .section-office, .section-feedback, .section-journal, .section-contact-us, .section-partners
+        padding-top: 60px
+        padding-bottom: 60px
+    .section-intro
+        padding-top: 60px
++media-breakpoint-down(lg)
+    .section-intro
+        height: auto
+        padding-bottom: 60px
+        .tags-list
+            display: block
+            margin-top: 40px
+            &__title
+                margin-bottom: 20px
+            .tag
+                display: none
+            .tag:nth-child(-n+4)
+                display: block
+            .tag_more
+                display: block
+    .section-office
+        .heading_sm
+            margin-top: 30px
+        .contact-info
+            margin-top: 40px
+
+    .section-journal
+        .journal
+            margin-bottom: 20px
+        .btn
+            margin-top: 30px
++media-breakpoint-down(lg)
+    .section-intro 
+        .filter
+            margin-top: 40px
+
+
++media-breakpoint-down(md)
+    .section-quiz 
+        .block 
+            .heading_sm
+                margin-top: 30px
+
+    .section-about 
+        .block 
+            .btn
+                margin-top: 30px

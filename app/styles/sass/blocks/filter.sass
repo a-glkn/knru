@@ -1,0 +1,98 @@
+.icon_metro
+    color: #3579C1
+    &__title
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 160%
+        color: #3579C1
+        margin-top: auto
+        margin-bottom: auto
+
+
+.filter
+    &__top
+        display: flex
+    &__main
+        padding: 30px
+        background-color: #fff
+        border-radius: 5px
+        border-top-left-radius: 0
+    .icon
+        cursor: pointer
+        &:hover
+            color: $accent
+    .row-bot
+        margin-top: 30px
+        .btn
+            margin-bottom: 0
+
+    .more_icon
+        color: #3579C1
+        display: none
+
+    .hide_icon
+        color: #3579C1
+        display: none
+        .icon__title
+            color: #3579C1
+
+    &-radio
+        width: 230px
+        overflow: hidden
+        &:first-child
+            border-top-left-radius: 5px
+        &:last-child
+            border-top-right-radius: 5px
+
+
+.filter.openned
+    .more_icon
+        display: none
+
+    .hidden-mob
+        display: block !important
+    
+
++media-breakpoint-down(xl)
+    .filter 
+        .row-bot 
+            .btn
+                font-size: 15px
+
+
+
++media-breakpoint-down(lg)
+    .filter
+        .form__input, .select
+            margin-bottom: 20px
+
+        .row-bot
+            margin-top: 20px
+
+        .icon
+            justify-content: center
+        .more_icon
+            display: flex
+
+        .row-bot 
+            .btn
+                margin-bottom: 20px
+        .hide_icon
+            display: flex
+
++media-breakpoint-down(md)
+    .filter
+        &__main
+            padding: 20px 10px
+        .form-group_with-select
+            flex-wrap: wrap
+            .form__input
+                border-radius: 5px
+            .select
+                border-radius: 5px
+                width: 100%
+
+@media (max-width: 482.98px)
+    .filter__main
+        border-top-right-radius: 0
