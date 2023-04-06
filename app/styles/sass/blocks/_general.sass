@@ -68,9 +68,12 @@
         justify-content: center
         padding-top: 14.5px
         padding-bottom: 14.5px
+        svg
+            margin-right: 5px
         span
             margin-top: auto
             margin-bottom: auto
+            margin-left: 5px
         &:hover
             svg
                 path
@@ -229,8 +232,6 @@ p
         top: 0
         left: 0
 
-    &:checked + label:before
-
     &:disabled + label
         color: #b8b8b8
         cursor: auto
@@ -292,8 +293,6 @@ p
         color: #191919
         transition: .3s ease
         margin-bottom: 30px
-        &_tel
-
         &:focus
             border-color: $accent
 
@@ -371,24 +370,15 @@ p
         display: flex
         text-align: center
         position: relative
-        padding-top: 100px
         overflow: hidden
-        &:after
-            content: ''
-            display: block
-            position: absolute
-            z-index: 0
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            background-color: rgba(25,25,25,.5)
         &-icon
             margin-bottom: 10px
-                
+            position: relative
+            z-index: 2
         &-title
             transition: .3s ease
-
+            position: relative
+            z-index: 2
         a
             position: relative
             z-index: 1
@@ -401,18 +391,23 @@ p
             line-height: 160%
             width: 100%
             height: 100%
+            padding-top: 100px
             color: #FFFFFF
             text-decoration: none
+            &:after
+                content: ''
+                display: block
+                position: absolute
+                z-index: 0
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background-color: rgba(25,25,25,.5)
+                transition: .3s ease
             &:hover
-                .cats-slider
-                    &__item
-                        &-icon
-                            svg
-                                path
-                                    stroke: $accent
-                        
-                        &-title
-                            color: $accent
+                &:after
+                    background-color: rgba(25,25,25,.3)
                             
                         
     .swiper-pagination
@@ -526,9 +521,6 @@ p
     border-radius: 5px
     overflow: hidden
     padding-bottom: 32px
-    &__img
-        a
-
     &__title
         padding-left: 24px
         margin-top: 20px
@@ -695,8 +687,6 @@ p
     transition: .3s ease
     &:hover
         border: 1px solid rgba(25, 25, 25, 1)
-
-    &__icon
 
     &__title
         font-style: normal
