@@ -82,7 +82,7 @@
         color: #191919
         transition: .3s ease
     &:hover
-        .fav-link
+        .fav-link-
             &__title
                 color: $accent
 
@@ -154,6 +154,9 @@
         width: 180px
         height: 42px
         display: block
+        img
+            width: 180px
+            height: 42px
     .geo_mob
         display: none
     &-top
@@ -166,6 +169,37 @@
         &-inner
             display: flex
             justify-content: space-between
+        .links
+            .fav, .enter-link
+                display: flex
+               
+
+    .links
+        display: flex
+        .fav
+            margin-right: 30px
+
+    .fav
+        &:hover
+            .fav__num
+                color: $accent !important
+            .fav__icon
+                svg
+                    path
+                        stroke: $accent !important
+
+    .enter-link
+        &:hover
+            .enter-link__title
+                color: $accent !important
+            .enter-link__icon
+                svg
+                    path
+                        stroke: $accent !important
+
+    .phone__number
+        &:hover
+            color: $accent
     
     &-bottom
         height: 100px
@@ -177,6 +211,147 @@
             display: flex
             justify-content: space-between
 
+        .links
+            .fav
+                margin-left: 30px
+            .fav, .enter-link
+                display: none
+
+
+.header-fixed
+    padding-top: 150px
+    .header
+        z-index: 100
+        position: fixed
+        top: -50px
+        left: 0
+        width: 100%
+        border-bottom: 1px solid rgba(25, 25, 25, .3)
+        .logo
+            width: 48px
+            overflow: hidden
+            img
+                width: 180px !important
+                max-width: 180px !important
+
+        .header-bottom .links 
+            .fav, .enter-link
+                display: flex
+
+
+.header-trans
+    padding-top: 0
+    .header
+        z-index: 100
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        background-color: transparent
+ 
+        .logo
+            .logo-normal
+                display: none
+            .logo-white
+                display: block
+
+        .geo__icon 
+            svg
+                path
+                    stroke: #fff
+        .geo__heading
+            color: #fff
+            &:after
+                background-image: url(../images/dist/select-white.svg)
+
+        .fav__icon, .enter-link__icon
+            svg
+                path
+                    stroke: #fff
+        .fav__num, .enter-link__title
+            color: #fff
+        .menu ul li a
+            color: #fff
+
+        .phone__number
+            color: #fff
+        .phone__icon 
+            svg
+                path
+                    stroke: #fff
+        .header-bottom
+            .links
+                .fav, .enter-link
+                    display: none
+
+        .header-top
+            border-color: rgba(255,255,255, .5)
+
+
+.header-fixed.header-trans
+    .header
+        z-index: 100
+        position: fixed
+        top: -50px
+        left: 0
+        width: 100%
+        background-color: #fff
+        .logo
+            .logo-normal
+                display: block
+            .logo-white
+                display: none
+
+        .fav__icon, .enter-link__icon
+            svg
+                path
+                    stroke: #191919 !important
+
+
+        .fav__num, .enter-link__title
+            color: #191919 !important
+
+        .fav
+            &:hover
+                .fav__num
+                    color: $accent !important
+                .fav__icon
+                    svg
+                        path
+                            stroke: $accent !important
+
+        .enter-link
+            &:hover
+                .enter-link__title
+                    color: $accent !important
+                .enter-link__icon
+                    svg
+                        path
+                            stroke: $accent !important
+
+
+
+        .phone__number
+            color: #191919
+            &:hover
+                color: $accent
+
+        .menu ul li a
+            color: #191919
+            &:hover
+                color: $accent
+        .phone__icon svg path
+            stroke: #A3032B
+
+        .header-bottom
+            .links
+                .phone
+                    margin-right: 30px
+                .fav, .enter-link
+                    display: flex
+
+
+        
 
 .menu-toggler
     display: none
@@ -292,6 +467,25 @@
         a
             font-size: 14px
 
+    .header-fixed
+        .header
+            .header-bottom .links 
+                .fav
+                    margin-left: 10px
+                    margin-right: 10px
+
+
+    .header-fixed.header-trans
+        .header
+            .header-bottom
+                .links
+                    .phone
+                        margin-right: 10px
+                    .fav, .enter-link
+                        display: flex
+
+                    .fav
+                        margin-right: 10px
 +media-breakpoint-down(lg)
     body
         padding-top: 66px
@@ -302,7 +496,12 @@
         &__heading
             font-size: 16px
             margin-left: 0
-        
+    .header-trans
+        padding-top: 66px
+        .header
+            position: fixed
+            background-color: #fff
+
     .header
         z-index: 99
         position: fixed
@@ -315,7 +514,7 @@
         .geo_mob
             display: flex
             position: absolute
-            left: 129px
+            left: 119px
             top: 2px
         &-top
             display: none
@@ -341,10 +540,30 @@
             height: 19px
             margin-top: 4px
             position: relative
+            .logo-normal
+                display: block
+            .logo-white
+                display: none
             img
                 position: absolute
                 top: 0
                 left: 0
+                width: 80px
+                height: 19px
+
+    .header-trans
+        .header
+            .geo
+                &__heading
+                    color: #191919
+                    &:after
+                        background-image: url(../images/dist/select.svg)
+            .logo
+                .logo-normal
+                    display: block
+                .logo-white
+                    display: none
+
     .menu-toggler
         display: block
 

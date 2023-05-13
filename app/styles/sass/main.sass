@@ -3,6 +3,25 @@
 
 @import config
 @import 'blocks/**/*'
+    
+.section-intro-cats
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
+    background-size: cover
+    padding-top: 260px
+    padding-bottom: 150px
+    .cats-list
+        margin-top: 60px
+    .heading_lg
+        margin-bottom: 10px
+    .btn-block
+        margin-top: 20px
+        max-width: 360px
+        margin-left: auto
+        margin-right: auto
+        .btn
+            width: 100%
 
 
 .section-intro
@@ -12,7 +31,6 @@
     position: relative
     background-size: cover
     padding-top: 80px
-
     &:before
         content: ''
         display: block
@@ -173,6 +191,11 @@
     .heading
         margin-bottom: 45px    
 
+
+.section-3d
+    padding-top: 80px
+    padding-bottom: 80px
+
 +media-breakpoint-down(xl)
     .section-office 
         .contact-info
@@ -209,9 +232,21 @@
             margin-bottom: 20px
         .btn
             margin-top: 30px
+
+    .section-3d
+        padding-top: 60px
+        padding-bottom: 60px
 +media-breakpoint-down(lg)
     .section-intro 
         .filter
+            margin-top: 40px
+
+    .section-intro-cats
+        padding-top: 60px
+        padding-bottom: 80px
+
+    .section-3d
+        .d3-slider
             margin-top: 40px
 
 

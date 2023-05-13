@@ -634,6 +634,10 @@ p
             background-color: $accent
 
 
+.swiper-pagination_white
+    .swiper-pagination-bullet
+        background-color: #fff
+
 .swiper-button-prev, .swiper-button-next
     width: 50px
     height: 50px
@@ -670,6 +674,77 @@ p
     transform: rotate(180deg)
     margin-left: 570px + 20px
 
+
+
+.d3-slider
+    position: relative
+    &-inner
+        overflow: hidden
+    &__item
+        height: 312px
+        border-radius: 5px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+        display: flex
+        text-align: center
+        position: relative
+        overflow: hidden
+        padding: 40px
+        flex-direction: column
+        &-title
+            font-style: normal
+            font-weight: 500
+            font-size: 26px
+            line-height: 160%
+            color: #FFFFFF
+            text-align: left
+        &-tour
+            display: flex
+            margin-top: 20px
+            svg
+                margin: auto 0
+                margin-right: 5px
+            div
+                margin: auto 0
+                font-style: normal
+                font-weight: 400
+                font-size: 16px
+                line-height: 160%
+                color: #FFFFFF
+
+
+    .swiper-pagination
+        position: absolute !important
+        width: 100% !important
+        left: 0 !important
+        bottom: 40px !important
+
+    .swiper-button-prev
+        margin-left: 0
+        left: 40px
+        bottom: 20px
+        top: auto
+        margin-top: 0
+        z-index: 10
+
+    .swiper-button-next
+        margin-left: 0
+        left: auto
+        right: 40px
+        bottom: 20px
+        top: auto
+        margin-top: 0
+        z-index: 10
+
+    .swiper-button-prev, .swiper-button-next
+        opacity: .5
+        svg
+            path
+                transition: .3s ease
+                stroke: #fff
+        &:hover
+            opacity: 1
 
 .block
     border-radius: 5px
@@ -788,6 +863,98 @@ p
 
 
 
+.d3-block
+    border-radius: 5px
+    background-repeat: no-repeat
+    background-position: center
+    background-image: url(../images/dist/d3-bg.jpg)
+    position: relative
+    height: 312px
+    display: block
+    text-decoration: none !important
+    background-size: cover
+    &__ribbon
+        font-style: normal
+        font-weight: 500
+        font-size: 18px
+        line-height: 160%
+        color: #FFFFFF
+        padding: 10px 40px
+        background-color: #A3032B
+        margin-top: 20px
+        border-top-right-radius: 5px
+        border-bottom-right-radius: 5px
+        display: inline-block
+    &__title
+        font-style: normal
+        font-weight: 500
+        font-size: 24px
+        line-height: 160%
+        color: #FFFFFF
+        margin-top: 31px
+        padding-left: 40px
+        padding-right: 40px
+
+
+    &__small
+        display: flex
+        left: 40px
+        position: absolute
+        bottom: 40px
+        &-icon
+            width: 24px
+            height: 24px
+            margin: auto 0
+            margin-right: 5px
+        &-text
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 160%
+            color: #FFFFFF
+            margin: auto 0
+
+
+.cats-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    &__item
+        width: 210px
+        text-decoration: none !important 
+        text-align: center
+        margin-bottom: 40px
+        margin-left: 5px
+        margin-right: 5px
+        a
+            transition: .3s ease
+            text-decoration: none !important 
+        &-icon
+            svg
+                path
+                    transition: .3s ease
+        &-title
+            margin-top: 20px
+            font-style: normal
+            font-weight: 500
+            font-size: 19px
+            line-height: 160%
+            color: #FFFFFF
+            transition: .3s ease
+
+
+        a
+            &:hover
+                opacity: 0.7
+
+
+
+
+
+
+
+    
+
 +media-breakpoint-down(xl)
     .block
         padding: 40px
@@ -902,6 +1069,13 @@ p
 
         &__item
             padding: 40px
+
+    .cats-list
+        flex-wrap: nowrap
+        justify-content: flex-start
+        overflow-y: auto
+        &__item
+            min-width: 180px
 +media-breakpoint-down(md)
     .heading
         font-size: 30px !important

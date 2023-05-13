@@ -146,6 +146,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
+    /* Expert Slider */
+    let d3Slider = document.querySelector('.d3-slider-inner');
+    if(d3Slider) {
+        new Swiper(d3Slider, {
+            spaceBetween: 0,
+            loop: true,
+            slidesPerView: 1,
+            effect: 'fade',
+            navigation: {
+                nextEl: ".d3-slider .swiper-button-next",
+                prevEl: ".d3-slider .swiper-button-prev",
+            },
+            pagination: {
+                el: ".d3-slider .swiper-pagination",
+            },
+        });
+    }
     
     /* Tabs */
     let tabs = document.querySelectorAll('.tabs');
@@ -204,5 +223,21 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('menu-tags-openned');
         }, false);
     }
+
+
+    window.addEventListener('scroll', function() {
+        var docWidth = document.body.scrollWidth;
+
+        if(docWidth > 991) {
+            if(window.scrollY > 50) {
+                document.body.classList.add('header-fixed');
+            } else {
+                document.body.classList.remove('header-fixed');
+            }
+        } else {
+            document.body.classList.remove('header-fixed');
+        }
+        
+    });
     
 });
