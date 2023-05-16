@@ -86,9 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log('afterInit offer-slider');
 
                     let miniSliders = document.querySelectorAll('.inside-mini-slider .mini-slider');
+                    const imgH = miniSliders[0].querySelector('img').offsetHeight;
+
+                    offerSlider.querySelectorAll('.card__img').forEach((card) => {
+                        console.log(card);
+                        card.style.height = imgH + 'px';
+                    })
+
                     if(miniSliders) {
                         miniSliders.forEach((slider) => {
-                            
+
                             let miniSlider = slider.querySelector('.inside-mini-slider .mini-slider-inner');
                             let prev = slider.querySelector('.swiper-button-prev');
                             let next = slider.querySelector('.swiper-button-next');
