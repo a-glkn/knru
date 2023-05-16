@@ -1,6 +1,7 @@
 .geo
     display: flex
     cursor: pointer
+    position: relative
     &__icon
         margin-top: auto
         margin-bottom: auto
@@ -19,6 +20,7 @@
         margin-left: 20px
         padding-right: 34px
         position: relative
+        height: 26px
         &:after
             position: absolute
             right: 0
@@ -31,6 +33,44 @@
             background-repeat: no-repeat
             background-position: center
             background-image: url(../images/dist/select.svg)
+
+    &__content
+        position: absolute
+        display: none
+        padding-top: 13px
+        ul
+            background-color: #fff
+            border-radius: 5px
+            padding: 10px 20px
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.06)
+            li
+                a
+                    font-style: normal
+                    font-weight: 400
+                    font-size: 16px
+                    line-height: 160%
+                    color: #191919
+                    text-decoration: none
+                    white-space: nowrap
+                    transition: .3s ease
+                    &:hover
+                        color: $accent
+                &.active
+                    a
+                        color: $accent
+
+    &:hover
+        .geo
+            &__content
+                display: block
+                left: 24px
+                top: 26px
+            &__heading
+                &:after
+                    transform: rotate(180deg)
+
+
+
 
 
 .fav
@@ -496,6 +536,13 @@
         &__heading
             font-size: 16px
             margin-left: 0
+        &:hover
+            .geo
+                &__content
+                    left: -18px
+                    padding-top: 18px
+
+
     .header-trans
         padding-top: 66px
         .header
