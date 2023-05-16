@@ -57,15 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Offer Slider */
     let offerSlider = document.querySelector('.offer-slider-inner');
     if(offerSlider) {
-        let navi = document.querySelector('.offer-slider .swiper-pagination_main');
+        let navi = document.querySelector('.offer-slider .swiper-pagination_offer');
 
         new Swiper(offerSlider, {
             spaceBetween: 20,
             loop: true,
             slidesPerView: 1,
             navigation: {
-                nextEl: ".offer-slider .swiper-button-next_main",
-                prevEl: ".offer-slider .swiper-button-prev_main",
+                nextEl: ".offer-slider .swiper-button-next_offer",
+                prevEl: ".offer-slider .swiper-button-prev_offer",
             },
             pagination: {
                 el: navi
@@ -80,6 +80,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 992: {
                     slidesPerView: 3
                 },
+            },
+            on: {
+                afterInit: function () {
+                    console.log('afterInit offer-slider');
+
+                    let miniSliders = document.querySelectorAll('.inside-mini-slider .mini-slider');
+                    if(miniSliders) {
+                        miniSliders.forEach((slider) => {
+                            
+                            let miniSlider = slider.querySelector('.inside-mini-slider .mini-slider-inner');
+                            let prev = slider.querySelector('.swiper-button-prev');
+                            let next = slider.querySelector('.swiper-button-next');
+                            let navi = slider.querySelector('.swiper-pagination');
+
+                            new Swiper(miniSlider, {
+                                spaceBetween: 0,
+                                loop: true,
+                                slidesPerView: 1,
+                                navigation: {
+                                    nextEl: next,
+                                    prevEl: prev,
+                                },
+                                pagination: {
+                                    el: navi
+                                },
+                            });
+                        });
+                    }
+                }
             }
         });
     }
@@ -123,11 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     /* Slider inside card */
-    let miniSliders = document.querySelectorAll('.mini-slider');
+    let miniSliders = document.querySelectorAll('.outside-mini-slider .mini-slider');
     if(miniSliders) {
         miniSliders.forEach((slider) => {
             
-            let miniSlider = slider.querySelector('.mini-slider-inner');
+            let miniSlider = slider.querySelector('.outside-mini-slider .mini-slider-inner');
             let prev = slider.querySelector('.swiper-button-prev');
             let next = slider.querySelector('.swiper-button-next');
             let navi = slider.querySelector('.swiper-pagination');
