@@ -956,7 +956,91 @@ p
 
 
 
+.breadcrumbs
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    line-height: 160%
+    color: #7A7A7A
+    a
+        color: #7A7A7A
+        text-decoration: none !important
+        opacity: 0.5
+        transition: .3s ease
+        &:hover
+            opacity: 1
 
+.tags
+    display: flex
+    flex-wrap: wrap
+    a
+        margin-bottom: 20px
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 140%
+        color: #000000
+        padding: 10px 15px
+        border: 1px solid #BABABA
+        border-radius: 5px
+        margin-right: 20px
+        display: inline-block
+        text-decoration: none !important
+        transition: .3s ease
+        &:last-child
+            margin-right: 0
+        &.active
+            border-color: #A3032B
+            color: #A3032B
+        &:hover
+            border-color: #A3032B
+            color: #A3032B
+
+
+
+.pagination
+    display: flex
+    justify-content: center
+    a
+        text-decoration: none !important
+        display: block
+    *
+        margin-left: 10px
+        margin-right: 10px
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 160%
+        color: #191919
+        transition: .3s ease
+    &__el
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        text-align: center
+        line-height: 40px
+        border: 1px solid rgba(25,25,25, .5)
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 40px
+        color: #191919
+        &:hover
+            border-color: #A3032B
+            background-color: #A3032B
+            color: #fff
+        &.current
+            border-color: #A3032B
+            background-color: #A3032B
+            color: #fff
+    &__prev
+        transform: rotate(180deg)
+    &__prev, &__next
+        position: relative
+        width: 40px
+        height: 40px
+        &:hover
+            opacity: 0.5
 
 
 
