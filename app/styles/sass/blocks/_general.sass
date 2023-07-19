@@ -208,6 +208,93 @@ p
         margin-top: auto
         margin-bottom: auto
 
+.breadcrumbs
+    margin-top: 20px
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    line-height: 160%
+    color: #7A7A7A
+    a
+        color: #7A7A7A
+        opacity: 0.5
+        text-decoration: none
+        transition: .3s ease
+        &:hover
+            opacity: 1
+
+.graph-legend
+    &__item
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 24px
+        color: #333333
+    .line
+        display: inline-block
+        width: 51px
+        height: 2px 
+        background-color: #000
+        position: relative
+        top: -5px
+        margin-right: 5px
+        &_accent
+            background-color: #A3032B
+
+
+.banner
+    padding: 40px 0
+    border: 1px solid rgba(25,25,25,.3)
+    border-radius: 5px
+    position: relative
+    &:after
+        content: ''
+        display: block
+        width: 275px
+        height: 270px
+        background-position: 0 0
+        background-repeat: no-repeat
+        background-image: url(../images/dist/about-0.png)
+        background-size: cover
+        position: absolute
+        bottom: 0
+        left: 185px
+    img
+        display: block
+        margin: 0 auto
+        max-width: 100%
+        height: auto
+    &__title
+        font-style: normal
+        font-weight: 700
+        font-size: 22px
+        line-height: 1
+        color: #191919
+        margin-bottom: 30px
+
+
+.banner-desc
+    display: flex
+    border-radius: 5px
+    overflow: hidden
+    border: 1px solid rgba(25,25,25,.3)
+    &__img
+        min-width: 458px
+        max-width: 458px
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+        background-image: url(../images/dist/about-1.jpg)
+    &__contet
+        padding-left: 20px
+        padding-top: 34px
+        padding-bottom: 34px
+        padding-right: 80px
+        flex-grow: 1
+        .heading_md, .heading_sm
+            margin-bottom: 20px
+        .btn
+            margin-top: 40px
 
 .styled-checkbox
     position: absolute
@@ -863,6 +950,24 @@ p
         display: flex
         flex-wrap: wrap
 
+.digit
+    padding-right: 20px
+    &__title
+        font-style: normal
+        font-weight: 700
+        font-size: 36px
+        line-height: 130%
+        color: #A3032B
+    &__text
+        margin-top: 20px
+        padding-top: 20px
+        border-top: 1px solid rgba(0,0,0,.3)
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 24px
+        color: #333333
+
 
 
 .d3-block
@@ -1082,6 +1187,12 @@ p
             font-size: 16px
         &__date
             margin-top: 18px
+
+
+    .banner
+        &:after
+            left: 125px
+
 +media-breakpoint-down(lg)
     .block
         margin-left: auto
@@ -1167,6 +1278,15 @@ p
         overflow-y: auto
         &__item
             min-width: 180px
+    .banner
+        text-align: center
+        padding-left: 30px
+        padding-right: 30px
+        img
+            margin-bottom: 30px
+        &:after
+            display: none
+
 
 +media-breakpoint-down(md)
     .heading

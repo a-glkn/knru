@@ -132,6 +132,119 @@
         margin-bottom: 50px
 
 
+.section-digits
+    padding-top: 80px
+    padding-bottom: 80px
+    .digit
+        margin-top: 60px
+
+
+.section-about-page
+    padding-top: 80px
+    padding-bottom: 80px
+    .heading_md
+        margin-bottom: 60px
+
+.section-graph
+    padding-top: 80px
+    padding-bottom: 80px
+    .graph-legend
+        margin-top: 40px
+    img.graph
+        margin-top: -238px
+        max-width: 100%
+        height: auto
+
+.section-banner-desc
+    padding-top: 60px
+    padding-bottom: 60px
+
+.section-condition
+    padding: 80px 0
+    .heading_md
+        margin-bottom: 30px
+    .cond-block
+        margin-top: 60px
+        padding-right: 20px
+        border-right: 1px solid rgba(0,0,0,.3)
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 160%
+        color: #333333
+        &__title
+            font-style: normal
+            font-weight: 550
+            font-size: 24px
+            line-height: 140%
+            color: #A3032B
+            margin-bottom: 30px
+        &__semi-title
+            margin-bottom: 20px
+            font-style: normal
+            font-weight: 550
+            font-size: 20px
+            line-height: 130%
+            color: #191919
+        &_last
+            border-right: 0
+
+.section-certs
+    padding: 60px 0
+
+.cert-slider
+    position: relative
+    overflow: hidden
+    &__item
+        .frame
+            margin-left: auto
+            margin-right: auto
+            width: 255.5px
+            height: 315px
+            position: relative
+            left: -5px
+            background-repeat: no-repeat
+            background-position: 0 0
+            background-size: cover
+            background-image: url(../images/dist/frame.png)
+            padding-top: 52px
+            padding-left: 51px
+            cursor: pointer
+            img
+                width: 162px
+                height: auto
+
+    .swiper-button-prev, .swiper-button-next
+        width: 50px
+        height: 51px
+        position: absolute
+        z-index: 2
+        top: 50% !important
+        margin-top: -25px !important
+        margin-left: 0 !important
+        background-color: transparent
+        svg
+            width: 50px
+            height: 51px
+            path, rect
+                transition: .3s ease
+        &:after
+            display: none
+
+        &:hover
+            svg
+                path
+                    stroke: $accent
+
+    .swiper-button-prev
+        left: 0
+        transform: rotate(180deg)
+    .swiper-button-next
+        left: auto
+        right: 0
+        transform: rotate(0)
+
+
 .section-office
     padding-top: 80px
     padding-bottom: 80px
@@ -462,6 +575,7 @@ img.featured
     .section-3d
         padding-top: 60px
         padding-bottom: 60px
+
 +media-breakpoint-down(lg)
     .section-intro 
         .filter
@@ -506,6 +620,50 @@ img.featured
     .single 
         .breadcrumbs
             margin-bottom: 60px
+
+    .section-about-page
+        padding-top: 60px
+        padding-bottom: 60px
+        .heading_md
+            margin-bottom: 40px
+
+    .section-digits
+        padding-top: 60px
+        padding-bottom: 60px
+
+    .digit
+        &__title
+            font-size: 30px
+        &__text
+
+    .section-graph
+        padding-top: 60px
+        padding-bottom: 60px
+        .heading_md
+            br
+                display: none
+        img.graph
+            margin-top: 0
+
+    .cert-slider .swiper-button-next, .cert-slider .swiper-button-prev
+        display: block
+
+    .banner-desc__img
+        display: none
+
+    .banner-desc__contet
+        padding: 30px !important
+
+    .section-banner-desc
+        padding-top: 40px
+        padding-bottom: 40px
+
+    .section-condition
+        .cond-block
+            border: 0
+    .section-condition
+        padding-top: 60px
+        padding-bottom: 60px
 +media-breakpoint-down(md)
     .section-quiz 
         .block 
@@ -535,7 +693,9 @@ img.featured
         padding: 15px 30px
         &__text
             font-size: 18px
-            
+    .section-digits 
+        .digit
+            margin-top: 40px
 +media-breakpoint-down(sm)
     .callblock 
         padding: 10px 20px
