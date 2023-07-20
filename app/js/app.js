@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         new Swiper(feedbackSlider, {
             spaceBetween: 0,
             loop: true,
+            autoHeight: true,
             slidesPerView: 1,
             navigation: {
                 nextEl: ".feedback-slider .swiper-button-next",
@@ -177,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             spaceBetween: 0,
             loop: true,
             slidesPerView: 1,
+            autoHeight: true,
             navigation: {
                 nextEl: ".expert-slider .swiper-button-next",
                 prevEl: ".expert-slider .swiper-button-prev",
