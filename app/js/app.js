@@ -291,6 +291,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }, false);
     }
 
+    /* Vacancy Toggler */
+    let vacs = document.querySelectorAll(".vacancy");
+    if(vacs) {
+        vacs.forEach(el => {
+    
+            el.querySelector('.vacancy__toggle').addEventListener("click",function(e) {
+                el.classList.toggle('vacancy_open');
+
+                if (this.innerHTML === "Подробнее") {
+                    this.innerHTML = "Скрыть";
+                } else {
+                    this.innerHTML = "Подробнее";
+                }
+
+            }, false);
+        });
+    }
+
 
     window.addEventListener('scroll', function() {
         var docWidth = document.body.scrollWidth;

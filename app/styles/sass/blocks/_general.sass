@@ -865,6 +865,11 @@ p
     .feature
         width: calc(20% - 13.333px)
 
+    &_4el
+        .feature
+            width: calc(25% - 13.3333px)
+
+
 .partner
     border: 1px solid rgba(25, 25, 25, 0.3)
     border-radius: 5px
@@ -1147,9 +1152,111 @@ p
         &:hover
             opacity: 0.5
 
+.vacancy
+    padding: 40px
+    border-radius: 10px
+    border: 1px solid rgba(25,25,25,0.3)
+    &__title
+        margin-bottom: 30px
+    &__price
+        margin-bottom: 30px
+    &__city
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 110%
+        color: rgba(25, 25, 25, 0.5)
+        margin-bottom: 30px
+
+    &__toggle
+        position: relative
+        padding-right: 34px
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 110%
+        color: #A3032B
+        display: inline-block
+        cursor: pointer
+        &:after
+            position: absolute
+            top: 50%
+            right: 0
+            margin-top: -12px
+            content: ''
+            width: 24px
+            height: 24px
+            background-repeat: no-repeat
+            background-position: 0 0
+            background-image: url(../images/dist/arr-toggle.svg)
+
+    &__content
+        display: none
+        p
+            margin: 1.5em 0 1em
+        ul
+            margin: 1em 0
+            list-style-type: disc
+            list-style-position: outside
+            padding-left: 22px
+
+    .btn
+        width: 100%
+        max-width: 366px
+        margin-top: 30px
+
+.vacancy_open
+    .vacancy
+        &__content
+            display: block
+
+        &__toggle
+            &:after
+                transform: rotate(180deg)
 
 
-    
+.vacancy-hr
+    background-color: #F7F7F7
+    padding: 30px 50px
+    border-radius: 10px
+    .hr
+        padding-bottom: 20px
+        border-bottom: 1px solid rgba(25,25,25,0.3)
+        &:last-child
+            padding-bottom: 0
+            border: 0
+
+
+
+.hr
+    padding-top: 20px
+    &__title
+        font-style: normal
+        font-weight: 400
+        font-size: 24px
+        line-height: 140%
+        color: #191919
+    &__img
+        width: 130px
+        height: 130px
+        margin-bottom: 20px
+        img
+            max-width: 100%
+            height: auto
+            border-radius: 50%
+
+    &__pos
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 140%
+        color: #606060
+        margin-top: 10px
+
+    .phone
+        margin-top: 20px
+
+
 
 +media-breakpoint-down(xl)
     .block
@@ -1192,6 +1299,11 @@ p
     .banner
         &:after
             left: 125px
+    .vacancy-hr
+        padding: 30px 
+
+    .vacancy
+        padding: 30px 
 
 +media-breakpoint-down(lg)
     .block
@@ -1287,7 +1399,8 @@ p
         &:after
             display: none
 
-
+    .vacancy-hr
+        margin-top: 40px
 +media-breakpoint-down(md)
     .heading
         font-size: 30px !important
@@ -1327,3 +1440,6 @@ p
     .feedback-slider
         &__item-name
             font-size: 24px
+
+
+            
