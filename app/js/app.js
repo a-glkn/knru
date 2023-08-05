@@ -6,6 +6,28 @@ import NiceSelect from 'nice-select2/dist/js/nice-select2.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* Feedback Stars */
+    let formFeedback = document.querySelector('.form_feedback');
+    if(formFeedback) {
+        formFeedback.querySelectorAll('.feedback-stars svg').forEach((el, index) => {
+
+            el.addEventListener("click", function(e) {
+    
+                formFeedback.querySelectorAll('.feedback-stars svg').forEach(svg => {
+                    svg.classList.remove('active');
+                });
+    
+                formFeedback.querySelectorAll('.feedback-stars svg').forEach((svg, i) => {
+                    if(i <= index) svg.classList.add('active');
+                });
+
+                formFeedback.querySelector('.feedback-rating').value = index + 1;
+    
+            });
+            
+        });
+    }
+
     /* Custom Select */
     let selects = document.querySelectorAll('.select');
 
@@ -324,5 +346,89 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
     });
+
+
+    /* File Input */
+
+    let uploadButton = document.getElementById("upload-button");
+    let container = document.querySelector(".file-container");
+    let error = document.getElementById("file-error");
+    let imageDisplay = document.getElementById("image-display");
+
+    const fileHandler = (file, name, type) => {
+    if (type.split("/")[0] !== "image") {
+        error.innerText = "Пожулуйста выбирайте только изображения";
+        return false;
+    }
+    error.innerText = "";
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            let imageContainer = document.createElement("figure");
+            let img = document.createElement("img");
+            img.src = reader.result;
+            imageContainer.appendChild(img);
+            imageContainer.innerHTML += `<figcaption>${name}</figcaption>`;
+            imageDisplay.appendChild(imageContainer);
+        };
+    };
+
+    //Upload Button
+    uploadButton.addEventListener("change", () => {
+        imageDisplay.innerHTML = "";
+        Array.from(uploadButton.files).forEach((file) => {
+            fileHandler(file, file.name, file.type);
+        });
+    });
+
+    container.addEventListener(
+        "dragenter",
+        (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            container.classList.add("active");
+        },
+        false
+    );
+
+    container.addEventListener(
+        "dragleave",
+        (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            container.classList.remove("active");
+        },
+        false
+    );
+
+    container.addEventListener(
+        "dragover",
+        (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            container.classList.add("active");
+        },
+        false
+    );
+
+    container.addEventListener(
+        "drop",
+        (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            container.classList.remove("active");
+            let draggedData = e.dataTransfer;
+            let files = draggedData.files;
+            imageDisplay.innerHTML = "";
+            Array.from(files).forEach((file) => {
+            fileHandler(file, file.name, file.type);
+            });
+        },
+        false
+    );
+
+    window.onload = () => {
+        error.innerText = "";
+    };
     
 });

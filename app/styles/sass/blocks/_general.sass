@@ -445,6 +445,87 @@ p
                 border-top-left-radius: 0
                 border-bottom-left-radius: 0
 
+.feedback-form
+    padding: 48px 56px
+    border-radius: 10px
+    border: 1px solid rgba(25,25,25,0.3)
+    .heading_md
+        margin-bottom: 20px
+    .feedback-stars-heading
+        margin-top: 30px
+        font-style: normal
+        font-weight: 400
+        font-size: 18px
+        line-height: 140%
+        color: #4F4C4D
+        margin-bottom: 10px
+    .btn
+        width: 100%
+        max-width: 484px
+        margin-bottom: 0
+        margin-top: 30px
+
+    .file-container 
+        width: 100%
+        margin-top: -10px
+
+    .feedback-stars
+        margin-bottom: 30px
+        svg
+            cursor: pointer
+            &.active
+                fill: #A3032B
+
+    .styled-checkbox+label
+        margin-top: 30px
+.file-container 
+    width: 100%
+
+.file-container input[type="file"] 
+    display: none
+
+.file-container label 
+    display: block
+    position: relative
+    color: rgba(25,25,25,0.3)
+    font-size: 16px
+    padding-top: 47px
+    text-align: center
+    width: 100%
+    height: 120px
+    border-radius: 5px
+    cursor: pointer
+    border: 1px dashed rgba(25,25,25,0.3)
+
+.file-container.active label
+    border-color: $accent
+
+.file-container #image-display 
+    position: relative
+    width: 100%
+    margin: 0 auto
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+    margin-top: 0
+
+.file-container #image-display figure 
+    width: calc(25% - 15px)
+    margin-top: 20px
+    margin-bottom: 0
+
+.file-container #image-display img 
+    width: 100%
+
+.file-container #image-display figcaption 
+    font-size: 14px
+    text-align: center
+
+.file-container #file-error 
+    text-align: center
+    color: #ff3030
+
+
 .cats-slider
     position: relative
     &-inner
@@ -662,7 +743,7 @@ p
         min-height: 5.333333332em
 
     &__date
-        margin-top: 34px
+        margin-top: 32px
         padding-left: 24px
         padding-right: 24px
         font-style: normal
@@ -671,6 +752,64 @@ p
         line-height: 1.428
         color: rgba(25, 25, 25, 0.5)
 
+    &__rating
+        display: flex
+        padding-left: 24px
+        padding-right: 24px
+        margin-top: 32px
+        &-title
+            font-style: normal
+            font-weight: 400
+            font-size: 14px
+            line-height: 20px
+            color: rgba(25, 25, 25, 0.5)
+            margin-right: 10px
+            margin-top: auto
+            margin-bottom: auto
+        &-content
+            display: flex
+            margin-top: auto
+            margin-bottom: auto
+            svg
+                margin-right: 12px
+
+    &__author
+        margin-top: 20px
+        padding-left: 24px
+        padding-right: 24px
+        &-name
+            font-style: normal
+            font-weight: 550
+            font-size: 18px
+            line-height: 140%
+            color: #4F4C4D
+        &-pos
+            margin-top: 2px
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 140%
+            color: #4F4C4D
+
+
+    &_short
+        .journal
+            &__title
+                a
+                    -webkit-line-clamp: 2
+                    min-height: 2.46em
+
+            &__content
+                -webkit-line-clamp: 2
+                min-height: 2.6666666666em
+
+            &__rating
+                margin-top: 20px
+            &__author
+                margin-top: 16px
+
+            &__date
+                margin-top: 30px
 
 .soc
     display: flex
@@ -1401,6 +1540,9 @@ p
 
     .vacancy-hr
         margin-top: 40px
+
+    .feedback-form
+        padding: 30px
 +media-breakpoint-down(md)
     .heading
         font-size: 30px !important
@@ -1442,4 +1584,5 @@ p
             font-size: 24px
 
 
-            
+    .file-container #image-display figure 
+        width: calc(50% - 10px)
