@@ -6,6 +6,33 @@ import NiceSelect from 'nice-select2/dist/js/nice-select2.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* Gallery Slider */
+    let gallerySlider = document.querySelector('.mySwiper');
+
+    if(gallerySlider) {
+        var swiper = new Swiper(".col-slider .mySwiper", {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: false,
+            breakpoints: {
+                480: {
+                    spaceBetween: 20,
+                    slidesPerView: 5
+                },
+            },
+        });
+        
+        var swiper2 = new Swiper(".col-slider .mySwiper2", {
+            slidesPerView: 1,
+            thumbs: {
+              swiper: swiper,
+            },
+        });
+    }
+
+    
+
     /* Feedback Stars */
     let formFeedback = document.querySelector('.form_feedback');
     if(formFeedback) {
@@ -103,17 +130,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* Offer Slider */
-    let offerSlider = document.querySelector('.offer-slider-inner');
+    let offerSlider = document.querySelector('.offer-slider');
     if(offerSlider) {
         let navi = document.querySelector('.offer-slider .swiper-pagination_offer');
 
-        new Swiper(offerSlider, {
+        new Swiper(offerSlider.querySelector('.offer-slider-inner'), {
             spaceBetween: 20,
             loop: true,
             slidesPerView: 1,
             navigation: {
-                nextEl: ".offer-slider .swiper-button-next_offer",
-                prevEl: ".offer-slider .swiper-button-prev_offer",
+                nextEl: offerSlider.querySelector('.swiper-button-next_offer'),
+                prevEl: offerSlider.querySelector('.swiper-button-prev_offer')
             },
             pagination: {
                 el: navi
@@ -131,17 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             on: {
                 afterInit: function () {
-                    console.log('afterInit offer-slider');
-
                     let miniSliders = document.querySelectorAll('.inside-mini-slider .mini-slider');
-
-
                     if(miniSliders.length) {
 
                         const imgH = miniSliders[0].querySelector('img').offsetHeight;
 
                         offerSlider.querySelectorAll('.card__img').forEach((card) => {
-                            console.log(card);
                             card.style.height = imgH + 'px';
                         })
                         
@@ -349,86 +371,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* File Input */
-
-    let uploadButton = document.getElementById("upload-button");
     let container = document.querySelector(".file-container");
-    let error = document.getElementById("file-error");
-    let imageDisplay = document.getElementById("image-display");
 
-    const fileHandler = (file, name, type) => {
-    if (type.split("/")[0] !== "image") {
-        error.innerText = "Пожулуйста выбирайте только изображения";
-        return false;
-    }
-    error.innerText = "";
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            let imageContainer = document.createElement("figure");
-            let img = document.createElement("img");
-            img.src = reader.result;
-            imageContainer.appendChild(img);
-            imageContainer.innerHTML += `<figcaption>${name}</figcaption>`;
-            imageDisplay.appendChild(imageContainer);
-        };
-    };
+    if(container) {
+        let uploadButton = document.getElementById("upload-button");
+        let error = document.getElementById("file-error");
+        let imageDisplay = document.getElementById("image-display");
 
-    //Upload Button
-    uploadButton.addEventListener("change", () => {
-        imageDisplay.innerHTML = "";
-        Array.from(uploadButton.files).forEach((file) => {
-            fileHandler(file, file.name, file.type);
-        });
-    });
-
-    container.addEventListener(
-        "dragenter",
-        (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            container.classList.add("active");
-        },
-        false
-    );
-
-    container.addEventListener(
-        "dragleave",
-        (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            container.classList.remove("active");
-        },
-        false
-    );
-
-    container.addEventListener(
-        "dragover",
-        (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            container.classList.add("active");
-        },
-        false
-    );
-
-    container.addEventListener(
-        "drop",
-        (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            container.classList.remove("active");
-            let draggedData = e.dataTransfer;
-            let files = draggedData.files;
-            imageDisplay.innerHTML = "";
-            Array.from(files).forEach((file) => {
-            fileHandler(file, file.name, file.type);
-            });
-        },
-        false
-    );
-
-    window.onload = () => {
+        const fileHandler = (file, name, type) => {
+        if (type.split("/")[0] !== "image") {
+            error.innerText = "Пожулуйста выбирайте только изображения";
+            return false;
+        }
         error.innerText = "";
-    };
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+            reader.onloadend = () => {
+                let imageContainer = document.createElement("figure");
+                let img = document.createElement("img");
+                img.src = reader.result;
+                imageContainer.appendChild(img);
+                imageContainer.innerHTML += `<figcaption>${name}</figcaption>`;
+                imageDisplay.appendChild(imageContainer);
+            };
+        };
+
+        //Upload Button
+        uploadButton.addEventListener("change", () => {
+            imageDisplay.innerHTML = "";
+            Array.from(uploadButton.files).forEach((file) => {
+                fileHandler(file, file.name, file.type);
+            });
+        });
+
+        container.addEventListener(
+            "dragenter",
+            (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                container.classList.add("active");
+            },
+            false
+        );
+
+        container.addEventListener(
+            "dragleave",
+            (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                container.classList.remove("active");
+            },
+            false
+        );
+
+        container.addEventListener(
+            "dragover",
+            (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                container.classList.add("active");
+            },
+            false
+        );
+
+        container.addEventListener(
+            "drop",
+            (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                container.classList.remove("active");
+                let draggedData = e.dataTransfer;
+                let files = draggedData.files;
+                imageDisplay.innerHTML = "";
+                Array.from(files).forEach((file) => {
+                fileHandler(file, file.name, file.type);
+                });
+            },
+            false
+        );
+
+        window.onload = () => {
+            error.innerText = "";
+        };
+    }
+
+    
     
 });
