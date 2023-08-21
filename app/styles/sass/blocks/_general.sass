@@ -130,6 +130,10 @@ a.btn
 .full-wrapper
     overflow-x: hidden
 
+.single-catalog
+    .full-wrapper
+        overflow-x: unset
+
 .inverted
     *
         color: #fff
@@ -530,19 +534,40 @@ p
 
 .file-container #image-display figure 
     width: calc(25% - 15px)
-    margin-top: 20px
+    margin-top: 0
     margin-bottom: 0
 
+
 .file-container #image-display img 
-    width: 100%
+    width: auto
+    height: auto
+    margin-left: auto
+    margin-right: auto
+    display: block
+    max-height: 236.5px
 
 .file-container #image-display figcaption 
     font-size: 14px
     text-align: center
+    word-wrap: break-word
 
 .file-container #file-error 
     text-align: center
     color: #ff3030
+    font-family: $userfont
+
+.file-container.has-file
+    border: 1px dashed rgba(25,25,25,.3)
+    border-radius: 5px
+    padding-bottom: 20px
+
+.file-container.has-file.active
+    border-color: $accent
+
+.file-container.has-file label
+    border: 0
+    height: auto
+    padding-bottom: 47px
 
 
 .cats-slider
@@ -846,6 +871,8 @@ p
     background-color: #F7F7F7
     padding: 30px
     border-radius: 5px
+    position: sticky
+    top: 120px
     &__title
         font-style: normal
         font-weight: 400
@@ -1664,6 +1691,7 @@ p
 
     .object-block
         margin-bottom: 40px
+        position: static
 +media-breakpoint-down(md)
     .heading
         font-size: 30px !important

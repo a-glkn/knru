@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Gallery Slider */
     let gallerySlider = document.querySelector('.mySwiper');
-
     if(gallerySlider) {
         var swiper = new Swiper(".col-slider .mySwiper", {
             spaceBetween: 10,
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     
-
     /* Feedback Stars */
     let formFeedback = document.querySelector('.form_feedback');
     if(formFeedback) {
@@ -55,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
     /* Custom Select */
     let selects = document.querySelectorAll('.select');
-
     if(selects) {
         selects.forEach(el => {
             let placeholder = el.getAttribute('data-placeholder');
@@ -74,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let selector = document.querySelectorAll(".form__input_tel");
     let im = new Inputmask("+7 (999) 999 99 99");
     im.mask(selector);
+
 
     /* Category Slider */
     let catsSlider = document.querySelector('.cats-slider-inner');
@@ -128,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
     }
+
 
     /* Offer Slider */
     let offerSlider = document.querySelector('.offer-slider');
@@ -193,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
 
     /* Feedback Slider */
     let feedbackSlider = document.querySelector('.feedback-slider-inner');
@@ -215,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
     /* Expert Slider */
     let expertSlider = document.querySelector('.expert-slider-inner');
     if(expertSlider) {
@@ -233,6 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+
     /* Slider inside card */
     let miniSliders = document.querySelectorAll('.outside-mini-slider .mini-slider');
     if(miniSliders) {
@@ -277,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+
     /* Tabs */
     let tabs = document.querySelectorAll('.tabs');
     if(tabs) {
@@ -296,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
     /* Menu Toggler */
     let toggler = document.querySelector(".menu-toggler");
     if(toggler) {
@@ -303,6 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.toggle('menu-openned');
         }, false);
     }
+
 
     /* Filter Toggler */
     let filterShowMoreBtn = document.querySelector(".filter .more_icon");
@@ -335,6 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, false);
     }
 
+
     /* Vacancy Toggler */
     let vacs = document.querySelectorAll(".vacancy");
     if(vacs) {
@@ -354,6 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    /* Header fixing on scroll */
     window.addEventListener('scroll', function() {
         var docWidth = document.body.scrollWidth;
 
@@ -369,6 +375,35 @@ document.addEventListener('DOMContentLoaded', () => {
         
     });
 
+    
+    /* Scroll to Map */
+    function scrollToElement(element, duration, offset=0) {
+        var start = window.scrollY || window.pageYOffset;
+        var end = element.getBoundingClientRect().top + start - offset;
+        var currentTime = 0;
+    
+        function linearInterpolation(t, b, c, d) {
+            return c * t / d + b;
+        }
+    
+        function scroll() {
+            currentTime += 16;
+            var progress = linearInterpolation(currentTime, start, end - start, duration);
+            window.scrollTo(0, progress);
+            if (currentTime < duration) {
+                requestAnimationFrame(scroll);
+            }
+        }
+    
+        requestAnimationFrame(scroll);
+    }
+    const btnMap = document.querySelector(".single_catalog .btn_map");
+    if(btnMap) {
+        btnMap.addEventListener("click", function(e) {
+            scrollToElement(document.querySelector(".single_catalog #location-block"), 600, 130); 
+        });
+    }
+
 
     /* File Input */
     let container = document.querySelector(".file-container");
@@ -379,13 +414,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let imageDisplay = document.getElementById("image-display");
 
         const fileHandler = (file, name, type) => {
-        if (type.split("/")[0] !== "image") {
-            error.innerText = "Пожулуйста выбирайте только изображения";
-            return false;
-        }
-        error.innerText = "";
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
+            if (type.split("/")[0] !== "image") {
+                error.innerText = "Пожулуйста выбирайте только изображения";
+                return false;
+            }
+            error.innerText = "";
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            container.classList.remove('has-file');
             reader.onloadend = () => {
                 let imageContainer = document.createElement("figure");
                 let img = document.createElement("img");
@@ -394,11 +430,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageContainer.innerHTML += `<figcaption>${name}</figcaption>`;
                 imageDisplay.appendChild(imageContainer);
             };
+            container.classList.add('has-file');
         };
 
         //Upload Button
         uploadButton.addEventListener("change", () => {
             imageDisplay.innerHTML = "";
+            container.classList.remove('has-file');
             Array.from(uploadButton.files).forEach((file) => {
                 fileHandler(file, file.name, file.type);
             });
@@ -444,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let files = draggedData.files;
                 imageDisplay.innerHTML = "";
                 Array.from(files).forEach((file) => {
-                fileHandler(file, file.name, file.type);
+                    fileHandler(file, file.name, file.type);
                 });
             },
             false
