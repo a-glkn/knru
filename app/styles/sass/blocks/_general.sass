@@ -97,6 +97,12 @@
             svg
                 path
                     stroke: $accent
+
+        &.active
+            svg
+                path
+                    stroke: $accent
+                    fill: $accent
 a.btn
     text-decoration: none
     display: block
@@ -1542,6 +1548,13 @@ p
         opacity: 1
 
 
+@media (max-width: 1280px)
+    .swiper-button-prev
+        margin-left: -570px - 20px
+
+    .swiper-button-next
+        margin-left: 570px - 30px
+
 +media-breakpoint-down(xl)
     .block
         padding: 40px
@@ -1588,6 +1601,13 @@ p
 
     .vacancy
         padding: 30px 
+
+@media (max-width: 1080px)
+    .swiper-button-prev
+        margin-left: -470px - 30px
+
+    .swiper-button-next
+        margin-left: 470px - 20px
 
 +media-breakpoint-down(lg)
     .block
