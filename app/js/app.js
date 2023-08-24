@@ -13,9 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
             spaceBetween: 10,
             slidesPerView: 4,
             freeMode: true,
+            a11y: false,
+            shortSwipes: true,
             watchSlidesProgress: false,
             breakpoints: {
                 480: {
+                    a11y: false,
+                    shortSwipes: false,
                     spaceBetween: 20,
                     slidesPerView: 5
                 },
@@ -24,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         var swiper2 = new Swiper(".col-slider .mySwiper2", {
             slidesPerView: 1,
+            a11y: false,
             thumbs: {
               swiper: swiper,
             },
@@ -81,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             spaceBetween: 20,
             loop: true,
             slidesPerView: 1,
+            a11y: false,
             navigation: {
                 nextEl: ".cats-slider .swiper-button-next",
                 prevEl: ".cats-slider .swiper-button-prev",
@@ -107,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         new Swiper(".cert-slider", {
             slidesPerView: 1,
             spaceBetween: 20,
+            a11y: false,
             navigation: {
                 nextEl: ".cert-slider .swiper-button-next",
                 prevEl: ".cert-slider .swiper-button-prev",
@@ -137,6 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
         new Swiper(offerSlider.querySelector('.offer-slider-inner'), {
             spaceBetween: 20,
             loop: true,
+            a11y: false,
+            shortSwipes: true,
             slidesPerView: 1,
             navigation: {
                 nextEl: offerSlider.querySelector('.swiper-button-next_offer'),
@@ -147,13 +156,16 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             breakpoints: {
                 480: {
-                    slidesPerView: 1
+                    slidesPerView: 1,
+                    shortSwipes: true
                 },
                 768: {
-                    slidesPerView: 2
+                    slidesPerView: 2,
+                    shortSwipes: true
                 },
                 992: {
-                    slidesPerView: 3
+                    slidesPerView: 3,
+                    shortSwipes: true
                 },
             },
             on: {
@@ -161,11 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     let miniSliders = document.querySelectorAll('.inside-mini-slider .mini-slider');
                     if(miniSliders.length) {
 
-                        const imgH = miniSliders[0].querySelector('img').offsetHeight;
+                        // const imgH = miniSliders[0].querySelector('img').offsetHeight;
 
-                        offerSlider.querySelectorAll('.card__img').forEach((card) => {
-                            card.style.height = imgH + 'px';
-                        })
+                        // offerSlider.querySelectorAll('.card__img').forEach((card) => {
+                        //     card.style.height = imgH + 'px';
+                        // })
                         
                         miniSliders.forEach((slider) => {
 
@@ -177,6 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             new Swiper(miniSlider, {
                                 spaceBetween: 0,
                                 loop: true,
+                                a11y: false,
                                 slidesPerView: 1,
                                 navigation: {
                                     nextEl: next,
@@ -203,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             spaceBetween: 0,
             loop: true,
             autoHeight: true,
+            a11y: false,
             slidesPerView: 1,
             navigation: {
                 nextEl: ".feedback-slider .swiper-button-next",
@@ -221,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
         new Swiper(expertSlider, {
             spaceBetween: 0,
             loop: true,
+            a11y: false,
             slidesPerView: 1,
             autoHeight: true,
             navigation: {
@@ -247,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
             new Swiper(miniSlider, {
                 spaceBetween: 0,
                 loop: true,
+                a11y: false,
                 slidesPerView: 1,
                 navigation: {
                     nextEl: next,
@@ -266,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         new Swiper(d3Slider, {
             spaceBetween: 0,
             loop: true,
+            a11y: false,
             slidesPerView: 1,
             effect: 'fade',
             navigation: {
