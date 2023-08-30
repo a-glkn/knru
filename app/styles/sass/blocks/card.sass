@@ -69,6 +69,37 @@
             &__title
                 color: $accent
 
+.map-icon
+    display: inline-flex
+    text-decoration: none
+    text-decoration: none
+    &__icon
+        margin-right: 5px
+        margin-top: auto
+        margin-bottom: auto
+        display: flex
+        svg
+            margin-top: auto
+            margin-bottom: auto
+            path
+                transition: .3s ease
+    &__title
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 160%
+        color: #191919
+        margin-top: auto
+        margin-bottom: auto
+        transition: .3s ease
+    &:hover
+        .map-icon
+            &__icon
+                svg
+                    path
+                        stroke: $accent
+            &__title
+                color: $accent
 .square
     display: inline-flex
     text-decoration: none
@@ -104,7 +135,9 @@
             right: 10px
             z-index: 2
 
-
+    &__content
+        &-text
+            display: none
     &__title
         font-style: normal
         font-weight: 400
@@ -154,7 +187,75 @@
             top: 0
             left: 10px
             background: rgba(25,25,25,.3)
+    &__tile
+        display: block
+    
+    &__list
+        display: none
 
+.listed-catalog
+    .col-item
+        width: 100% !important
+    .card
+        display: flex
+        .mini-slider
+            .swiper-slide
+                a
+                    display: block
+                    img
+                        min-height: 255px
+                        width: auto
+                        object-fit: cover
+
+        &__img
+            width: 32%
+            min-width: 32%
+            max-width: 32%
+            order: 1
+        &__title
+            margin-top: 10px
+            padding-left: 0
+            padding-right: 0
+            a
+                margin-left: 0
+                margin-right: 0
+        &__content
+            padding-left: 30px
+            padding-bottom: 30px
+            padding-right: 30px
+            order: 2
+            &-text
+                display: block
+                font-style: normal
+                font-weight: 400
+                font-size: 18px
+                line-height: 1.3333
+                color: #191919
+
+        &__price
+            padding: 0
+            margin: 0
+            margin-bottom: 20px
+            text-align: left
+            &:before
+                display: none
+        &__tile
+            display: none
+        &__list
+            padding-top: 30px
+            padding-right: 30px
+            margin: 0
+            width: 20%
+            min-width: 20%
+            max-width: 20%
+            display: flex
+            padding-bottom: 30px
+            flex-direction: column
+            order: 3
+            .metro, .district
+                margin-bottom: 10px
+            .square
+                margin-bottom: 20px
 
 
 
@@ -194,3 +295,74 @@
         .swiper-button-next
             opacity: 1
         
+
++media-breakpoint-down(xl)
+    .listed-catalog
+        .card
+            .mini-slider
+                .swiper-slide
+                    a
+                        img
+                            min-height: 255px
+
+            &__img
+                width: 36%
+                min-width: 36%
+                max-width: 36%
+            &__content
+                padding-left: 30px
+                padding-bottom: 30px
+                padding-right: 30px
+                &-text
+                    font-size: 16px
+            &__price
+                margin-bottom: 20px
+            &__list
+                padding-top: 30px
+                padding-right: 30px
+                width: 24%
+                min-width: 24%
+                max-width: 24%
+
+
++media-breakpoint-down(lg)
+    .listed-catalog
+        .card
+            flex-wrap: wrap
+            .mini-slider
+                .swiper-slide
+                    a
+                        img
+                            min-height: 255px
+
+            &__img
+                width: 100%
+                min-width: 100%
+                max-width: 100%
+            &__content
+                width: 100%
+                min-width: 100%
+                max-width: 100%
+                padding-left: 30px
+                padding-bottom: 30px
+                padding-right: 30px
+                margin-top: auto
+                &-text
+                    font-size: 16px
+            &__title
+                margin-top: 0
+            &__price
+                margin-bottom: 20px
+                width: 100%
+                min-width: 100%
+                max-width: 100%
+                padding-left: 0
+                padding-right: 0
+            &__list
+                width: 100%
+                min-width: 100%
+                max-width: 100%
+                padding-top: 0
+                padding-left: 30px
+                padding-right: 30px
+                margin-top: auto

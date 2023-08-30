@@ -46,6 +46,124 @@
             border-top-right-radius: 5px
 
 
+.filter-options
+    display: flex
+    justify-content: space-between
+    &__found
+        font-style: normal
+        font-weight: 550
+        font-size: 16px
+        line-height: 160%
+        color: #191919
+    >*
+        margin-top: auto
+        margin-bottom: auto
+    &__map
+        text-decoration: none
+        display: flex
+        &-icon
+            margin-top: auto
+            margin-bottom: auto
+            margin-right: 10px
+            display: flex
+        &-text
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 100%
+            color: #A3032B
+            margin-top: auto
+            margin-bottom: auto
+            text-decoration: none
+    &__views
+        display: flex
+
+    &__view
+        display: flex
+        opacity: .5
+        transition: .3s ease
+        cursor: pointer
+        margin-left: 10px
+        margin-right: 10px
+        &-icon
+            margin-top: auto
+            margin-bottom: auto
+            margin-right: 10px
+            display: flex
+            svg
+                margin: auto
+                path
+                    transition: .3s ease
+        &-text
+            margin-top: auto
+            margin-bottom: auto
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 100%
+            color: #191919
+            transition: .3s ease
+        &:hover
+            opacity: 1
+            .filter-options
+                &__view
+                    &-icon
+                        svg
+                            path
+                                stroke: #A3032B
+                    &-text
+                        color: #A3032B
+        &.active
+            opacity: 1
+            cursor: default
+            .filter-options
+                &__view
+                    &-icon
+                        svg
+                            path
+                                stroke: #A3032B
+                    &-text
+                        color: #A3032B
+
+
+    &__sort
+        display: flex
+        &-title
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 160%
+            color: #191919
+            opacity: 0.5
+        a
+            margin-left: 20px
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 160%
+            color: #A3032B
+            text-decoration: none
+            transition: .3s ease
+            &:hover
+                color: #191919
+            &.active
+                cursor: default
+                color: #191919
+
+
+.row-options
+    margin-top: 60px
+    margin-bottom: 30px
+    
+.row-catalog-filter
+    .filter
+        &__main
+            filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.04)) drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.06))
+        
+    .filter-radio
+        box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.1)
+
+
 .filter.openned
     .more_icon
         display: none
@@ -60,7 +178,17 @@
             .btn
                 font-size: 15px
 
+    .filter-options
+        flex-direction: column
+        &__found, &__map
+            margin-bottom: 10px
 
+        &__views
+            margin-bottom: 10px
+
+        &__view
+            margin-left: 0
+            margin-right: 20px
 
 +media-breakpoint-down(lg)
     .filter
@@ -92,6 +220,15 @@
             .select
                 border-radius: 5px
                 width: 100%
+
+    .filter-options
+        &__sort
+            &-title
+                display: none
+
+            a
+                margin-left: 0
+                margin-right: 20px
 
 @media (max-width: 482.98px)
     .filter__main

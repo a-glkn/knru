@@ -421,6 +421,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* Catalog View Toggle */
+    let catTogglers = document.querySelectorAll(".filter-options__view");
+    if(catTogglers) {
+        catTogglers.forEach((el, index) => {
+            el.addEventListener("click",function(e) {
+                if(el.classList.contains('active')) {
+                    return;
+                }
+
+                catTogglers.forEach((_el, index) => {
+                    _el.classList.remove('active');
+                })
+                
+                el.classList.add('active');
+
+
+                document.querySelector('.row-main-catalog').classList.toggle('listed-catalog');
+            }, false);
+        });
+        
+    }
+
 
     /* File Input */
     let container = document.querySelector(".file-container");
