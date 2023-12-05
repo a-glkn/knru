@@ -32,11 +32,12 @@
         width: 270px
     &_lg
         padding: 25px 10px
-        
     
     &:hover
         border-color: $accent
         color: $accent
+    &_white
+        border-color: #fff
     &_primary
         background-color: $accent
         color: #fff
@@ -50,6 +51,24 @@
             background-color: $accent
             border-color: $accent
             color: #fff
+
+    &_outline-2
+        border-color: #191919
+        color: #191919
+        background-color: transparent
+        &:hover
+            background-color: $accent
+            border-color: $accent
+            color: #fff
+    &_dark
+        background-color: #191919
+        color: #fff
+        &:hover
+            background-color: rgba(163, 3, 43, 0.9)
+            color: #fff
+    &_trans
+        border-color: transparent
+        color: #191919
     &_doc
         position: relative
         &:before
@@ -866,6 +885,14 @@ p
             &__date
                 margin-top: 30px
 
+    &_gradient
+        border: 0
+        background: linear-gradient(135.69deg, rgba(255, 226, 240, 0.3) -3.09%, rgba(255, 215, 223, 0.3) 111.15%), #FFFFFF
+        .journal
+            &__title, &__content
+                font-weight: 300 !important
+                a
+                    font-weight: 300 !important
 .main_feedback
     .journal
         &_short
@@ -1134,7 +1161,17 @@ p
         font-size: 18px
         line-height: 160%
         margin-top: 20px
-
+    &_gradient
+        border: 0 !important
+        background: linear-gradient(135.69deg, #FFE2F0 -3.09%, #FFD7DF 111.15%), url(.png), #FFFFFF
+    &_thin
+        .feature
+            &__title
+                font-weight: 300 !important
+        svg
+            path
+                stroke: #191919
+                stroke-width: 1px
 .feature-list
     display: flex
     justify-content: space-between
@@ -1145,7 +1182,13 @@ p
         .feature
             width: calc(25% - 13.3333px)
 
-
+    &_left
+        .feature
+            padding-left: 30px
+            padding-top: 30px
+            padding-right: 10px
+            text-align: left
+            
 .partner
     border: 1px solid rgba(25, 25, 25, 0.3)
     border-radius: 5px
@@ -1160,6 +1203,17 @@ p
         margin: auto
         width: 50%
 
+    &_grey
+        border: 0 !important
+        background-color: #fff
+        img
+            transition: .3s ease
+            filter: grayscale(100%)
+        &:hover
+            img
+                filter: grayscale(0)
+
+
 .partner-list
     display: flex
     justify-content: space-between
@@ -1167,6 +1221,12 @@ p
         width: calc(20% - 13.333px)
         max-width: calc(20% - 13.333px)
         min-width: calc(20% - 13.333px)
+    &_2row
+        margin-top: -10px
+        .partner
+            margin-top: 10px
+            margin-bottom: 10px
+        flex-wrap: wrap
 
 
 .tabs-headers
@@ -1437,7 +1497,8 @@ p
 .vacancy
     padding: 40px
     border-radius: 10px
-    border: 1px solid rgba(25,25,25,0.3)
+    background: linear-gradient(135.69deg, rgba(255, 226, 240, 0.3) -3.09%, rgba(255, 215, 223, 0.3) 111.15%), #FFFFFF
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.06)
     &__title
         margin-bottom: 30px
     &__price
@@ -1498,7 +1559,7 @@ p
 
 
 .vacancy-hr
-    background-color: #F7F7F7
+    background: linear-gradient(135.69deg, rgba(255, 226, 240, 0.3) -3.09%, rgba(255, 215, 223, 0.3) 111.15%), #FFFFFF
     padding: 30px 50px
     border-radius: 10px
     .hr
@@ -1572,6 +1633,119 @@ p
     .mySwiper .swiper-slide-thumb-active 
         opacity: 1
 
+.advs
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+.adv-el
+    width: 100%
+    max-width: 255px
+    font-style: normal
+    font-weight: 300
+    font-size: 18px
+    line-height: 24px
+    color: #000000
+    background: linear-gradient(135.69deg, #FFE2F0 -3.09%, #FFD7DF 111.15%), linear-gradient(112.16deg, #FFCBD1 -13.12%, #D7F1FF 109.73%), linear-gradient(133.09deg, rgba(248, 87, 166, 0.2) -16.01%, rgba(255, 88, 88, 0.2) 113.45%), #FFFFFF
+    border-radius: 10px
+    padding: 20px
+    &__title
+        font-style: normal
+        font-weight: 300
+        font-size: 36px
+        line-height: 130%
+        color: rgba(0,0,0,0.8)
+        padding-bottom: 20px
+        margin-bottom: 20px
+        border-bottom: 1px solid rgba(0,0,0,.3)
+
+    
+.elipse-top-right
+    position: relative
+    overflow: hidden
+    &:before
+        z-index: -1
+        content: ''
+        display: block
+        position: absolute
+        width: 1443px
+        height: 1443px
+        right: -721px
+        top: -626.12px
+        background: radial-gradient(50% 50% at 50% 50%, #EEB5D4 0%, rgba(255, 255, 255, 0) 100%)
+
+.elipse-bottom-left
+    position: relative
+    overflow: hidden
+    &:after
+        z-index: -1
+        content: ''
+        display: block
+        position: absolute
+        width: 2136px
+        height: 2136px
+        left: -1068px
+        bottom: -1068px
+        background: radial-gradient(50% 50% at 50% 50%, #EEB5D4 0%, rgba(255, 255, 255, 0) 100%)
+
+
+.elipse-bottom-left-1 
+    position: relative
+    overflow: hidden
+    &:before
+        z-index: -1
+        content: ''
+        display: block
+        position: absolute
+        width: 1354px
+        height: 1354px
+        left: -645px
+        bottom: -644.88px
+        background: radial-gradient(50% 50% at 50% 50%, #EEB5D4 0%, rgba(255, 255, 255, 0) 100%)
+    
+.elipse-bottom-right-1
+    position: relative
+    overflow: hidden
+    &:after
+        z-index: -1
+        content: ''
+        display: block
+        position: absolute
+        width: 1740px
+        height: 1740px
+        right: -791px
+        bottom: -1030px
+        background: radial-gradient(50% 50% at 50% 50%, #EEB5B5 0%, rgba(255, 255, 255, 0) 100%)
+
+
+
+.elipse-top-left
+    position: relative
+    overflow: hidden
+    &:before
+        z-index: -1
+        content: ''
+        display: block
+        position: absolute
+        width: 1146px
+        height: 1146px
+        left: -573px
+        top: -197.12px
+        background: radial-gradient(50% 50% at 50% 50%, #EEB5B5 0%, rgba(255, 255, 255, 0) 100%)
+
+.elipse-middle-right
+    position: relative
+    overflow: hidden
+    &:after
+        z-index: -1
+        content: ''
+        display: block
+        position: absolute
+        width: 1354px
+        height: 1354px
+        right: -677px
+        top: 775px
+        background: radial-gradient(50% 50% at 50% 50%, #EEB5D4 0%, rgba(255, 255, 255, 0) 100%)
 
 @media (max-width: 1280px)
     .swiper-button-prev
@@ -1688,10 +1862,24 @@ p
             margin-right: 20px
             &:last-child
                 margin-right: 0
+
+    .advs
+        -ms-overflow-style: none
+        scrollbar-width: none
+        overflow-x: auto
+        flex-wrap: nowrap
+        &::-webkit-scrollbar
+            display: none
+        .adv-el
+            min-width: 240px
+            margin-right: 20px
+            &:last-child
+                margin-right: 0
     .partner-list
         -ms-overflow-style: none
         scrollbar-width: none
         overflow-x: auto
+        flex-wrap: nowrap
         &::-webkit-scrollbar
             display: none
         .partner
@@ -1755,6 +1943,10 @@ p
     .object-block
         margin-bottom: 40px
         position: static
+
+    .feature-list_left 
+        .feature
+            min-width: 200px
 +media-breakpoint-down(md)
     .heading
         font-size: 30px !important

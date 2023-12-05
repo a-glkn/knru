@@ -148,12 +148,15 @@
 .section-vacancy-page
     padding-top: 80px
     padding-bottom: 80px
-    .heading_md
-        margin-bottom: 20px
 
     .feature-list
         margin-top: 40px
 
+.section-vacancy-advs
+    padding-top: 80px
+    padding-bottom: 80px
+    .adv-el
+        margin-top: 40px
 
 .section-vacancy
     padding-top: 80px
@@ -578,6 +581,63 @@ img.featured
 .section-feedback-form
     padding-bottom: 80px
 
+.section-vacancy-intro
+    padding-top: 150px
+    height: 783px
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    background-image: url(../images/dist/vac-bg.jpg)
+    .heading
+        color: #fff
+        margin-bottom: 20px
+    &__content
+        position: relative
+        img
+            position: absolute
+            display: block
+            &.head-1
+                width: 15.4%
+                top: 80px
+                left: 0
+            &.head-2
+                width: 5.4%
+                top: 186px
+                left: 24%
+            &.head-3
+                width: 10.3%
+                top: 80px
+                left: 31%
+            &.head-4
+                width: 16.6%
+                top: 125px
+                left: 47.2%
+            &.head-5
+                width: 5.4%
+                top: 50px
+                left: 64%
+            &.head-6
+                width: 6.5%
+                top: 168px
+                left: 70%
+            &.head-7
+                width: 29%
+                top: 278px
+                left: 61%
+                z-index: 1
+            &.head-8
+                width: 20.8%
+                top: 30px
+                right: 0
+
+
+    .row-text
+        margin-top: 294px
+        .btn
+            margin-top: 20px
+            color: #191919
+            max-width: 352px
+            width: 100%
 +media-breakpoint-down(xl)
     .section-office 
         .contact-info
@@ -674,6 +734,9 @@ img.featured
         padding-top: 60px
         padding-bottom: 60px
 
+    .section-vacancy-advs
+        padding-top: 60px
+        padding-bottom: 60px
     .section-vacancy
         padding-top: 60px
         padding-bottom: 60px
@@ -765,6 +828,17 @@ img.featured
         .row-content
             .col-param-2
                 margin-top: 30px
+
+
+
+    .section-vacancy-intro
+        height: auto
+        padding-top: 80px
+        padding-bottom: 80px
+        &__content
+            img
+                &.head-7
+                    display: none
 +media-breakpoint-down(sm)
     .callblock 
         padding: 10px 20px
