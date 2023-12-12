@@ -935,20 +935,63 @@ p
         font-style: normal
         font-weight: 400
         font-size: 26px
-        line-height: 160%
+        line-height: 130%
         color: #191919
+        margin-bottom: 20px
     &__price
-        margin-top: 20px
+        margin-top: 10px
         font-style: normal
-        font-weight: 500
-        font-size: 36px
         line-height: 160%
         color: #191919
         margin-bottom: 10px
+        display: inline-flex
+        font-size: 17px
+        font-weight: normal
+        .sum
+            font-size: 36px
+            font-weight: 500
+        .rub
+            width: 20px
+            margin-left: 10px
+            margin-right: 4px
+            display: flex
+            svg
+                margin: auto
+    &__tags
+        display: flex
+        margin-bottom: 20px
+        span
+            padding: 5px 8px
+            background: #A3032B
+            border-radius: 3px
+            font-style: normal
+            font-weight: 400
+            font-size: 12px
+            line-height: 160%
+            color: #FFFFFF
+            margin-right: 9px
+            &:last-child
+                margin-right: 0
     .btn
         margin-top: 20px
+    .param
+        margin-bottom: 20px
+        &__key, &__val
+            background-color: #F7F7F7
 
-
+    .social
+        margin-top: 30px
+        display: flex
+        justify-content: space-between
+        span
+            margin-top: auto
+            margin-bottom: auto
+        ul
+            margin-top: auto
+            margin-bottom: auto
+            display: flex
+            li
+                margin-left: 12px
 
 .param
     display: flex
