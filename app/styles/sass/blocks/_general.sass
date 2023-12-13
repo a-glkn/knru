@@ -1790,6 +1790,79 @@ p
         top: 775px
         background: radial-gradient(50% 50% at 50% 50%, #EEB5D4 0%, rgba(255, 255, 255, 0) 100%)
 
+.cat-card
+    border: 1px solid rgba(25,25,25,.3)
+    border-radius: 5px
+    overflow: hidden
+    height: 100%
+    &__img
+        a
+            display: block
+        img
+            width: 100%
+            height: auto
+    &__title
+        font-style: normal
+        font-weight: 400
+        font-size: 22px
+        line-height: 110%
+        color: #191919
+        a
+            color: #191919
+            text-decoration: none
+            transition: .3s ease
+            &:hover
+                color: $accent
+
+    &__content
+        padding: 20px 30px
+
+    &__tags
+        display: flex
+        margin-bottom: 20px
+        span, a
+            padding: 5px 8px
+            background: #A3032B
+            border-radius: 3px
+            font-style: normal
+            font-weight: 400
+            font-size: 12px
+            line-height: 160%
+            color: #FFFFFF
+            margin-right: 9px
+            text-decoration: none
+            &:last-child
+                margin-right: 0
+    &__list
+        margin-top: 20px
+        li
+            font-style: normal
+            font-weight: 400
+            font-size: 16px
+            line-height: 160%
+            color: #191919
+            padding-left: 15.5px
+            position: relative
+            margin-bottom: 10px
+            &:last-child
+                margin-bottom: 0
+            &:before
+                content: ''
+                display: block
+                width: 5px
+                height: 5px
+                border-radius: 50%
+                background-color: #A3032B
+                position: absolute
+                left: 0
+                top: 10px
+            a
+                color: #191919
+                text-decoration: none
+                transition: .3s ease
+                &:hover
+                    color: $accent
+
 @media (max-width: 1280px)
     .swiper-button-prev
         margin-left: -570px - 15px
