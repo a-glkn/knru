@@ -108,6 +108,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    /* Partners Slider */
+    let partnerSlider = document.querySelector('.partners-slider-inner');
+    if(partnerSlider) {
+        new Swiper(partnerSlider, {
+            spaceBetween: 20,
+            loop: true,
+            slidesPerView: 2,
+            a11y: false,
+            navigation: {
+                nextEl: ".partners-slider .swiper-button-next",
+                prevEl: ".partners-slider .swiper-button-prev",
+            },
+            pagination: {
+                el: ".partners-slider .swiper-pagination",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3
+                },
+                992: {
+                    slidesPerView: 4
+                },
+                1200: {
+                    slidesPerView: 5
+                },
+            }
+        });
+    }
+
+
+    /* Cert Slider */
     let certSlider = document.querySelector('.cert-slider');
     if(certSlider) {
         new Swiper(".cert-slider", {
